@@ -1,12 +1,21 @@
 
-# Tony Zeng
-<img src="photo_professional.jpg" alt="photo" width="200"/>
+# Active learning
+<!-- <img src="photo_professional.jpg" alt="photo" width="200"/> -->
 
-I am a third-year student at University of California, San Diego majoring in Data Science and Cognitive Science with a specialization in Machine Learning and Neural Computation. Meanwhile, I am also working toward a minor degree from Rady in Marketing. My interest lies in Business Analytics specifically in the field of E-commerce and Digital Marketing. I am eager to explore ways on how Data Science can be applied to promote effective marketing strategies in managing customer lifecycle.
+The US-China relationship is changing rapidly. To better understand its dynamics,
+monitoring and analyzing Twitter data posted by members of Congress becomes
+important. Before analyzing the tweets, there is a need to distinguish the sentimental
+posts from the factual posts and provide them with labels of different
+sentiment levels. Currently, the China Data Lab at UC San Diego has been training
+researchers to manually label the relevance and sentiment for the U.S. Congress
+tweets about the politics of China. To increase the efficiency, we trained two classification
+models that use the text features from the tweets to predict the relevance
+and sentiment of the tweets. The goal of this project is to explore the possibility
+of employing an active learning pipeline to automate the labeling procedure with
+these two classification models while enhancing the prediction accuracy over time
+with new coming tweets.
 
-**Email:** x6zeng@ucsd.edu  
-**GitHub:** [https://github.com/x6zeng](https://github.com/x6zeng)  
-**LinkedIn:** [https://www.linkedin.com/in/tony-zeng-3a2209153/](https://www.linkedin.com/in/tony-zeng-3a2209153/)  
+
 
 ## Education
 ### University of California San Diego
@@ -55,15 +64,6 @@ transaction data.
 - Trained an XGBoost Decision Tree Model and reached an
 accuracy of 86% on detecting fraud transactions.
 
-### Twitter Sentiment Analysis
-- Identified the hot topics in twitter posts using TF-IDF.
-- Extracted emotions and common phrases about popular
-topics.
-
-### California Wildfire Prediction
-- Collected past temperature, humidity, wind speed from
-climate stations and examined the effects on the frequency and
-the damage area of the wildfire
 
 ## Skills
 
@@ -75,5 +75,6 @@ the damage area of the wildfire
 |**Languages**|Chinese (Native Proficiency), English (Native Proficiency)|
 
 
-## Hobbies
-I like to play basketball, hike, and travel to places around the world. In my free time, I love to experience new food and try to learn how to cook them myself. 
+**Email:** x6zeng@ucsd.edu  
+**GitHub:** [https://github.com/x6zeng](https://github.com/x6zeng)  
+**LinkedIn:** [https://www.linkedin.com/in/tony-zeng-3a2209153/](https://www.linkedin.com/in/tony-zeng-3a2209153/)  
