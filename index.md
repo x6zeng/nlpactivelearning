@@ -17,7 +17,7 @@ I am a third-year student at University of California, San Diego majoring in Dat
 
 - Minor in Marketing
 
-Expected Graduation: June 2023  
+Expected Graduation: June 2023  =
 GPA: 3.88
 
 ## Work Experience
