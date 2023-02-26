@@ -1,5 +1,5 @@
 
-# Active learning
+# Active learning for NLP in predicting the relevance and sentiment of tweets about politics of China
 <!-- <img src="photo_professional.jpg" alt="photo" width="200"/> -->
 
 The US-China relationship is changing rapidly. To better understand its dynamics,
@@ -17,7 +17,7 @@ with new coming tweets.
 
 
 
-## Education
+## Overview
 ### University of California San Diego
 
 - B.S. in Data Science
@@ -29,7 +29,7 @@ with new coming tweets.
 Expected Graduation: June 2023  =
 GPA: 3.88
 
-## Work Experience
+## Data
 ### Illuminera | Shanghai, China 
 **Business Intelligence Intern**  
 April 2021 – October 2021
@@ -41,22 +41,8 @@ familiarize with the latest marketing trends.
 algorithms, enhanced operational efficiency, and raised the
 data quality
 
-### WuXi App. Tec | Shanghai, China 
-**Data Service Intern**  
-July 2020 – March 2021
-- Processed data-cleaning and standardization on database
-including Oracle, MySQL, SQL Server through SQLAlchemy.
-- Created monitoring applications (100+ pages) using Oracle
-APEX, designed dashboards for analyzing the app lifecycle.
-- Implemented a Power Bi cloud reporting system for examining
-the finance and usage of the chemistry department.
-- Crawled public government websites (30+ pages) using Scrapy
-to monitor the latest fiscal policy.
-- Performed NLP and clustering on the results of questions asked
-in the medicine Xiaoming artificial robot.
 
-
-## Projects
+## Methods
 
 ### IEEE-CIS Fraud Detection
 - Performed data cleaning and feature engineering on 60000+
@@ -65,7 +51,7 @@ transaction data.
 accuracy of 86% on detecting fraud transactions.
 
 
-## Skills
+## Results
 
 |Area|Skills|
 |---:|---|
@@ -73,6 +59,30 @@ accuracy of 86% on detecting fraud transactions.
 |**Database**|MySQL, Oracle, SQL Server, MongoDB, ETL|
 |**Business Intelligence**|PowerBI, QuickBI, Tableau, Excel|
 |**Languages**|Chinese (Native Proficiency), English (Native Proficiency)|
+
+## Discussions
+
+### IEEE-CIS Fraud Detection
+- Performed data cleaning and feature engineering on 60000+
+transaction data.
+- Trained an XGBoost Decision Tree Model and reached an
+accuracy of 86% on detecting fraud transactions.
+
+## Summary
+
+### IEEE-CIS Fraud Detection
+- Performed data cleaning and feature engineering on 60000+
+transaction data.
+- Trained an XGBoost Decision Tree Model and reached an
+accuracy of 86% on detecting fraud transactions.
+
+## Code and Reference
+
+### IEEE-CIS Fraud Detection
+- Performed data cleaning and feature engineering on 60000+
+transaction data.
+- Trained an XGBoost Decision Tree Model and reached an
+accuracy of 86% on detecting fraud transactions.
 
 
 **Email:** x6zeng@ucsd.edu  
