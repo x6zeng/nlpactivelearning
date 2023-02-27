@@ -16,75 +16,21 @@ these two classification models while enhancing the prediction accuracy over tim
 with new coming tweets.
 
 
-
-## Overview
-### University of California San Diego
-
-- B.S. in Data Science
-
-- B.S. in Cognitive Science - Specialization in Machine Learning and Neural Computation
-
-- Minor in Marketing
-
-Expected Graduation: June 2023  =
-GPA: 3.88
-
-## Data
-### Illuminera | Shanghai, China 
-**Business Intelligence Intern**  
-April 2021 – October 2021
-- Built a timely monitoring system on Quick Bi to achieve early
-warning, operational review, and user growth tracking.
-- Formalized customized mobile reports to help the customers
-familiarize with the latest marketing trends.
-- Optimized the user classifying system using fraud detection
-algorithms, enhanced operational efficiency, and raised the
-data quality
-
+## Introduction
+- Background
+- Literature Review & Prior Work
+- Relevant Data
 
 ## Methods
-
-### IEEE-CIS Fraud Detection
-- Performed data cleaning and feature engineering on 60000+
-transaction data.
-- Trained an XGBoost Decision Tree Model and reached an
-accuracy of 86% on detecting fraud transactions.
-
+- Data Collection
+- Data Preprocessing
+- Model Selection
+- Active Learning
 
 ## Results
 
-|Area|Skills|
-|---:|---|
-|**Programming**|Python, Java, JavaScript, HTML, CSS, R, SQL|
-|**Database**|MySQL, Oracle, SQL Server, MongoDB, ETL|
-|**Business Intelligence**|PowerBI, QuickBI, Tableau, Excel|
-|**Languages**|Chinese (Native Proficiency), English (Native Proficiency)|
+## Discussion
 
-## Discussions
+## Conclusion
 
-### IEEE-CIS Fraud Detection
-- Performed data cleaning and feature engineering on 60000+
-transaction data.
-- Trained an XGBoost Decision Tree Model and reached an
-accuracy of 86% on detecting fraud transactions.
-
-## Summary
-
-### IEEE-CIS Fraud Detection
-- Performed data cleaning and feature engineering on 60000+
-transaction data.
-- Trained an XGBoost Decision Tree Model and reached an
-accuracy of 86% on detecting fraud transactions.
-
-## Code and Reference
-
-### IEEE-CIS Fraud Detection
-- Performed data cleaning and feature engineering on 60000+
-transaction data.
-- Trained an XGBoost Decision Tree Model and reached an
-accuracy of 86% on detecting fraud transactions.
-
-
-**Email:** x6zeng@ucsd.edu  
-**GitHub:** [https://github.com/x6zeng](https://github.com/x6zeng)  
-**LinkedIn:** [https://www.linkedin.com/in/tony-zeng-3a2209153/](https://www.linkedin.com/in/tony-zeng-3a2209153/)  
+## Contribution
