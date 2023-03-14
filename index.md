@@ -6,21 +6,19 @@
 <p>
     
 <h2> Motivation </h2>
-  <li>The US-China relationship is changing rapidly. To better understand its dynamics, monitoring and analyzing tweets posted by members of Congress becomes important. </li>
-  <li>Before analyzing the tweets, there is a need to distinguish the sentimental posts from the factual posts and provide them with labels of different sentiment levels. </li>
-  <li>Currently, there have been two classifiers trained using the text features from the tweets to predict the relevance and sentiment of the tweets.
+  <li>In April 2019, the China Data Lab at UC San Diego initialized the “Congress Tweets” project with the intention of exploring more about the US-China relationship. </li>
+  <li>In order to distinguish the relevant sentimental tweets from the factual tweets, we built two classification models using the content of the tweet to predict the relevance and sentiment score of the tweets.</li>
    <li><strong> The goal of this project is to explore the possibility of employing an active learning pipeline to automate the labeling procedure with these two classification models while enhancing the prediction accuracy over time with new coming tweets.</strong></li>
 
 <h2> Background </h2>
-
-In April 2019, the China Data Lab at UC San Diego initialized the “Congress Tweets” project with the intention of exploring more about the US-China relationship. Through the Twitter API, the lab is able to collect more than 800,000 tweets related to China, posted by members of Congress in recent years. In order to distinguish the relevant sentimental tweets from the factual tweets, we built two classification models using the content of the tweet to predict the relevance and sentiment score of the tweets. By automating the process, we can save resources such as human labor and time as well as ensuring the quality of the data we feed into the analysis process.
 
 <h4>Literature Review & Prior Work</h4>
 
 According to Active Learning Literature Survey from the University of Wisconsin-Madison, in the field of machine learning, <strong>Active Learning is a repetitive process that utilizes a learning algorithm to search for the most informative data for the existing model, rather than training it on the entire dataset.</strong>
 
 <br>
-There are three general learning scenarios for active learning. <br>
+There are three general learning scenarios for active learning. 
+<br>
 
 <ol>
   <li>In Member Query Synthesis, the active learning algorithm generates a new unlabeled instance within the input space and queries the human expert for labeling. </li>
@@ -29,7 +27,8 @@ There are three general learning scenarios for active learning. <br>
 </ol>
 
 <br>
-There are also three main strategies to select the subset of data that is most informative to the current model. <br>
+There are also three main strategies to select the subset of data that is most informative to the current model. 
+<br>
 
 <ol>
   <li>In Committee-based Strategies, we will build different models and use the models’ predictions to determine the most informative data. The data is considered as most informative if there is maximum disagreement in predictions from the models. The disagreement can be measured by entropy or KL-Divergence. </li>
@@ -76,7 +75,7 @@ Further analysis revealed that incorporating the predictions of multiple classif
 
 <br>
   
-<table align="center">
+<table class="center">
     <caption align="top">Random Sampling vs. Posterior probability (Relevance)</caption>
     <tr>
         <td>Metric</td>
@@ -124,7 +123,7 @@ Further analysis revealed that incorporating the predictions of multiple classif
 
 <br>
 
-<table align="center">
+<table class="center">
     <caption style="text-align:center">Random Sampling vs. Committee (Relevance)</caption>
     <tr>
         <td>Metric</td>
@@ -172,7 +171,7 @@ Further analysis revealed that incorporating the predictions of multiple classif
 
 <br>
 
-<table align="center">
+<table class="center">
     <caption style="text-align:center">Random Sampling vs. Posterior probability (Sentiment)</caption>
     <tr>
         <td>Metric</td>
@@ -213,7 +212,7 @@ Further analysis revealed that incorporating the predictions of multiple classif
 
 <br>
 
-<table align="center">
+<table class="center">
     <caption style="text-align:center">Random Sampling vs. Committee (Sentiment)</caption>
     <tr>
         <td>Metric</td>
