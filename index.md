@@ -70,11 +70,13 @@ To find the most effective active learning strategies for our tasks, we implemen
 <h2> Findings </h2>
 <h4>Posterior probability vs. Committee based sampling strategy</h4>
 
-In this experiment, we utilized several One-tailed Paired T-tests to compare the efficacy of various active learning sampling strategies with the random sampling strategy. Our null hypothesis posited that there would be no discernible difference between the mean values of the evaluation metrics (accuracy, f1-score, precision, recall, and specificity) obtained via random sampling versus those obtained through active learning sampling strategies. Our alternative hypothesis, however, was that the mean value of the evaluation metrics obtained via active learning sampling strategy would be superior to that of the random sampling strategy. Given our objective of determining whether active learning improved the accuracy of predictions, we conducted four one-tailed paired t-tests. Subsequently, we generated tables that included relevant columns such as mean, standard deviation, t-test statistic, and p-value, to document the results of our experiments. The present study aimed to investigate the impact of Active Learning on predictive accuracies by conducting an experiment employing various settings and sampling strategies, and comparing multiple evaluation metrics, including Accuracy, F1-score, precision, recall, and specificity. The study hypothesized that committee-based sampling strategy would have a greater positive effect on predictions due to its incorporation of multiple classifiers, leading to less biased and more robust predictions. However, the results of the experiment contradicted this hypothesis. Specifically, the results suggested that the Posterior probability-based sampling strategy successfully identified the most informative data for continuous model updating.
+In this experiment, we utilized several One-tailed Paired T-tests to compare the efficacy of various active learning sampling strategies with the random sampling strategy. Our null hypothesis posited that there would be no discernible difference between the mean values of the evaluation metrics (accuracy, f1-score, precision, recall, and specificity) obtained via random sampling versus those obtained through active learning sampling strategies. Our alternative hypothesis, however, was that the mean value of the evaluation metrics obtained via active learning sampling strategy would be superior to that of the random sampling strategy. The study hypothesized that committee-based sampling strategy would have a greater positive effect on predictions due to its incorporation of multiple classifiers, leading to less biased and more robust predictions. However, the results of the experiment contradicted this hypothesis. Specifically, the results suggested that the Posterior probability-based sampling strategy successfully identified the most informative data for continuous model updating.
 
 Further analysis revealed that incorporating the predictions of multiple classifiers provided a more robust and less variable estimate of uncertainty, resulting in improved accuracy. Thus, calculating the entropy based on the average of classifiers' predictions did not lead to a significant increase in accuracy. The p-values obtained in Table 1, Table 2, Table 3, and Table 4 indicated that the Posterior probability-based sampling strategy was associated with significantly smaller p-values compared to the Committee-based sampling strategy. Using a confidence level of 0.05, it can be concluded that the active learning process led to significant increases in accuracy, f1-score, recall, and specificity. However, at the same confidence level, the null hypothesis could not be rejected when employing the Committee-based sampling strategy.
 
 Finally, it is worth noting that although the Posterior probability-based sampling strategy resulted in improved predictions, the magnitude of the increase was not substantial, ranging from 0.001 to 0.007.
+
+<br>
   
 <table style="float: left">
     <caption align="top">Random Sampling vs. Posterior probability (Relevance)</caption>
@@ -122,6 +124,8 @@ Finally, it is worth noting that although the Posterior probability-based sampli
     </tr>
 </table>
 
+<br>
+
 <table style="float: right">
     <caption style="text-align:center">Random Sampling vs. Committee (Relevance)</caption>
     <tr>
@@ -168,6 +172,8 @@ Finally, it is worth noting that although the Posterior probability-based sampli
     </tr>
 </table>
 
+<br>
+
 <table>
     <caption style="text-align:center">Random Sampling vs. Posterior probability (Sentiment)</caption>
     <tr>
@@ -206,6 +212,9 @@ Finally, it is worth noting that although the Posterior probability-based sampli
         <td>0.006</td>
     </tr>
 </table>
+
+<br>
+
 <table>
     <caption style="text-align:center">Random Sampling vs. Committee (Sentiment)</caption>
     <tr>
@@ -247,9 +256,7 @@ Finally, it is worth noting that although the Posterior probability-based sampli
 
 <h4>Features that affect the Active Learning Performance</h4>
 
-In our study, we aimed to investigate the impact of different settings on the accuracy of active learning. To this end, we grouped the data by settings and plotted accuracy difference graphs. Specifically, we compared the results obtained using unbalanced and balanced data in figures 3 and 4, and time-unsorted and time-sorted data in figures 5 and 6.
-The blue line in each plot represents the metric difference obtained using unbalanced data or time-unsorted data, while the orange line represents the metric difference obtained using balanced data or time-sorted data. Our results revealed that the orange line in each plot had more variance than the blue line. Furthermore, we compared the results acquired using different partition ratios and models. The colors of the lines indicate the partition ratio and the column indicates the type of models.
-In the conducted experiment, we employed a number of settings to fine-tune the active learning process and investigate their impact on its performance. These settings included the use of balanced or unbalanced datasets with respect to predictive labels, sorting data by date, partitioning of the data into training, unlabeled, and testing sets, and the number of samples drawn from the unlabeled data and added to the training set. Prior to the experiment, we hypothesized that a larger sampling size with a smaller training set would yield the greatest improvement in active learning performance. The results of our experiment supported this hypothesis.
+In our study, we aimed to investigate the impact of different settings on the accuracy of active learning. To this end, we grouped the data by settings and plotted accuracy difference graphs. We hypothesized that a larger sampling size with a smaller training set would yield the greatest improvement in active learning performance. The results of our experiment supported this hypothesis.
 
 Specifically, in the task of relevance prediction, we observed that increasing the sampling size led to an improvement in overall accuracy, as shown in Figure 7. We also found that having a training set comprising only 10\% of the total data, with the remaining 90\% divided equally between the unlabeled and testing sets, resulted in the greatest accuracy improvements for active learning. Additionally, the Bernoulli Naive Bayes Classifier emerged as the most promising model selection option, with accuracy improvements continuing to increase as the sampling size increased to 600.
 
@@ -276,17 +283,7 @@ Regarding the impact of sorting data by time on active learning, we plotted accu
 
 <h4>Most accurate vs. Most improved models</h4>
 
-Regarding the task of predicting relevance, the optimal classifier trained with balanced data was found to be a Random Forest Classifier, which yielded a positive class accuracy of approximately 80\%. With respect to sentiment prediction, the most accurate classifier trained with balanced data was determined to be a Ridge Logistic Regression, exhibiting respective accuracies of roughly 75\%, 44\%, and 67\% for the negative, neutral, and positive labels. The corresponding confusion matrix for both classifiers is presented in Figure 9. Additionally, Figure 10 portrays an overall improvement of around 0.16 for accuracy, 0.11 for precision, and 0.16 for recall in the sentiment prediction task. Conversely, the relevance prediction task demonstrated an overall improvement of approximately 0.04 for accuracy, 0.045 for precision, and 0.002 for recall.
-
-The primary objective of our project is to optimize the accuracies of both relevance and sentiment predictions. Our exploratory analysis indicated that training with unbalanced data yields higher accuracies, exceeding 90\%, as the sample size increases. However, it results in lower recall. Therefore, we adopted a balanced dataset for evaluating the best models, to avoid bias towards labels with more samples.
-
-Our experiments indicate that the Random Forest Classifier, trained on non-chronological data with Posterior probability-based sampling strategy, achieved the best performance for relevance prediction, with a training set of 90\%, an unlabeled set of 5\%, and a testing set of 5\%. It achieved an accuracy of approximately 80\% for the labels.
-
-For sentiment prediction, the best model was the Logistic Regression (Ridge) model, trained on chronological data with Posterior probability-based sampling strategy, with a training set of 50\%, an unlabeled set of 25\%, and a testing set of 25\%. It achieved accuracies of 75\%, 44\%, and 67\% for negative, neutral, and positive sentiment labels, respectively. Specific accuracy data are available in figure 8.
-
-Figure 9 demonstrates an overall improvement of approximately 0.16 for accuracy, 0.11 for precision, and 0.16 for recall in the sentiment prediction task. In contrast, the relevance prediction task demonstrated an overall improvement of approximately 0.04 for accuracy, 0.045 for precision, and 0.002 for recall.
-
-The relative high improvement in the Sentiment prediction task is due to the high variance in predictions with different settings, as observed from figures 4 and 6. Therefore, while active learning does increase accuracy to a small extent, these improvements may be attributed to randomness and cannot be considered a significant enhancement.
+Regarding the task of predicting relevance, the optimal classifier trained with balanced data was found to be a Random Forest Classifier, which yielded a positive class accuracy of approximately 80\%. With respect to sentiment prediction, the most accurate classifier trained with balanced data was determined to be a Ridge Logistic Regression, exhibiting respective accuracies of roughly 75\%, 44\%, and 67\% for the negative, neutral, and positive labels. The corresponding confusion matrix for both classifiers is presented in Figure 9. Additionally, Figure 10 portrays an overall improvement of around 0.16 for accuracy, 0.11 for precision, and 0.16 for recall in the sentiment prediction task. Conversely, the relevance prediction task demonstrated an overall improvement of approximately 0.04 for accuracy, 0.045 for precision, and 0.002 for recall. The relative high improvement in the Sentiment prediction task is due to the high variance in predictions with different settings, as observed from figures 4 and 6. Therefore, while active learning does increase accuracy to a small extent, these improvements may be attributed to randomness and cannot be considered a significant enhancement.
   
 <p align="center">
     <img src="img/accuracy.png" alt="photo" width="500"/>
