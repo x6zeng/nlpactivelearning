@@ -5,7 +5,13 @@
     <img src="img/twitter_us_china.png" alt="photo" width="400"/>
 <p>
 <h2> Overview </h2>
-The US-China relationship is changing rapidly. To better understand its dynamics, monitoring and analyzing tweets posted by members of Congress becomes important. Before analyzing the tweets, there is a need to distinguish the sentimental posts from the factual posts and provide them with labels of different sentiment levels. Currently, there have been two classifiers trained using the text features from the tweets to predict the relevance and sentiment of the tweets. <strong> The goal of this project is to explore the possibility of employing an active learning pipeline to automate the labeling procedure with these two classification models while enhancing the prediction accuracy over time with new coming tweets.</strong>
+<ul>
+  <li>The US-China relationship is changing rapidly. To better understand its dynamics, monitoring and analyzing tweets posted by members of Congress becomes important. </li>
+  <li>Before analyzing the tweets, there is a need to distinguish the sentimental posts from the factual posts and provide them with labels of different sentiment levels. </li>
+  <li>Currently, there have been two classifiers trained using the text features from the tweets to predict the relevance and sentiment of the tweets.
+   <li><strong> The goal of this project is to explore the possibility of employing an active learning pipeline to automate the labeling procedure with these two classification models while enhancing the prediction accuracy over time with new coming tweets.</strong></li>
+</ul>
+
 
 
 <h2> Introduction </h2>
