@@ -18,19 +18,19 @@ In April 2019, the China Data Lab at UC San Diego initialized the “Congress Tw
 <h4>Literature Review & Prior Work</h4>
 
 According to Active Learning Literature Survey from the University of Wisconsin-Madison, in the field of machine learning, <strong>Active Learning is a repetitive process that utilizes a learning algorithm to search for the most informative data for the existing model, rather than training it on the entire dataset.</strong>
-
+<\n>
 <ol>
-  There are three general learning scenarios for active learning. 
-  <li>In Member Query Synthesis, the active learning algorithm generates a new unlabeled instance within the input space and queries the human expert for labeling. </li>
-  <li>In Stream-based Selective Sampling, the unlabeled data is continuously being sent from the data source to the active learner and the active learning needs to decide if it asks the human expert to label the current data based on a query strategy. </li>
-  <li>In Pool-based Sampling, the most common scenario, most informative data samples are selected from the pool of unlabeled data samples based on some sampling strategies or informativeness measure. Then, the human expert will provide the correct label for these unlabeled data samples. Different from stream-based selective sampling, it focuses on more than one data sample at a time.</li>
+  There are three general learning scenarios for active learning. <\n>
+  <li>In <strong> Member Query Synthesis <\strong>, the active learning algorithm generates a new unlabeled instance within the input space and queries the human expert for labeling. </li>
+  <li>In <strong> Stream-based Selective Sampling <\strong>, the unlabeled data is continuously being sent from the data source to the active learner and the active learning needs to decide if it asks the human expert to label the current data based on a query strategy. </li>
+  <li>In <strong> Pool-based Sampling <\strong>, the most common scenario, most informative data samples are selected from the pool of unlabeled data samples based on some sampling strategies or informativeness measure. Then, the human expert will provide the correct label for these unlabeled data samples. Different from stream-based selective sampling, it focuses on more than one data sample at a time.</li>
 </ol>
 
 <ol>
-  There are also three main strategies to select the subset of data that is most informative to the current model.
-  <li>In Committee-based Strategies, we will build different models and use the models’ predictions to determine the most informative data. The data is considered as most informative if there is maximum disagreement in predictions from the models. The disagreement can be measured by entropy or KL-Divergence. </li>
-  <li> In Large margin-based Strategies, the distance to the separating hyperplane is used to measure the model’s confidence or certainty on unlabeled data. </li>
-  <li>In Posterior probability-based strategies, the estimation of class probabilities and the posterior probability distribution are used to determine whether the unlabeled data sample should be queried for label or not. This strategy can be used with any type of model which has the ability to predict output probabilities for class membership. The posterior probability distribution indicates the model’s confidence and certainty to assign the data sample to a particular class. For Posterior probability-based strategies, some common strategies to determine the most informative data samples from the probability distribution include Least Confidence, Best-versus-Second-Best (BvSB), and Entropy.</li>
+  There are also three main strategies to select the subset of data that is most informative to the current model.<\n>
+  <li>In <strong>Committee-based Strategies <\strong>, we will build different models and use the models’ predictions to determine the most informative data. The data is considered as most informative if there is maximum disagreement in predictions from the models. The disagreement can be measured by entropy or KL-Divergence. </li>
+  <li> In <strong> Large margin-based Strategies <\strong>, the distance to the separating hyperplane is used to measure the model’s confidence or certainty on unlabeled data. </li>
+  <li>In <strong>Posterior probability-based strategies <\strong>, the estimation of class probabilities and the posterior probability distribution are used to determine whether the unlabeled data sample should be queried for label or not. This strategy can be used with any type of model which has the ability to predict output probabilities for class membership. The posterior probability distribution indicates the model’s confidence and certainty to assign the data sample to a particular class. For Posterior probability-based strategies, some common strategies to determine the most informative data samples from the probability distribution include Least Confidence, Best-versus-Second-Best (BvSB), and Entropy.</li>
 </ol>
   
 <p align="center">
