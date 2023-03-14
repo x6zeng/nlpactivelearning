@@ -21,13 +21,16 @@ According to Active Learning Literature Survey from the University of Wisconsin-
 
 <br>
 There are three general learning scenarios for active learning. <br>
+
 <ol>
   <li>In Member Query Synthesis, the active learning algorithm generates a new unlabeled instance within the input space and queries the human expert for labeling. </li>
   <li>In Stream-based Selective Sampling, the unlabeled data is continuously being sent from the data source to the active learner and the active learning needs to decide if it asks the human expert to label the current data based on a query strategy. </li>
   <li>In Pool-based Sampling, the most common scenario, most informative data samples are selected from the pool of unlabeled data samples based on some sampling strategies or informativeness measure. Then, the human expert will provide the correct label for these unlabeled data samples. Different from stream-based selective sampling, it focuses on more than one data sample at a time.</li>
 </ol>
+
 <br>
 There are also three main strategies to select the subset of data that is most informative to the current model. <br>
+
 <ol>
   <li>In Committee-based Strategies, we will build different models and use the models’ predictions to determine the most informative data. The data is considered as most informative if there is maximum disagreement in predictions from the models. The disagreement can be measured by entropy or KL-Divergence. </li>
   <li> In Large margin-based Strategies, the distance to the separating hyperplane is used to measure the model’s confidence or certainty on unlabeled data. </li>
