@@ -17,7 +17,7 @@
 According to Active Learning Literature Survey from the University of Wisconsin-Madison, in the field of machine learning, <strong>Active Learning is a repetitive process that utilizes a learning algorithm to search for the most informative data for the existing model, rather than training it on the entire dataset.</strong>
 
 <br>
-There are three general learning scenarios for active learning. 
+<h5>Three general learning scenarios for active learning</h5>
 <br>
 
 <ol>
@@ -27,7 +27,7 @@ There are three general learning scenarios for active learning.
 </ol>
 
 <br>
-There are also three main strategies to select the subset of data that is most informative to the current model. 
+<h5>Three main strategies to select the subset of data that is most informative to the current model.</h5>
 <br>
 
 <ol>
