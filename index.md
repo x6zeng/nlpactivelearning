@@ -4,20 +4,16 @@
 <p align="center">
     <img src="img/twitter_us_china.png" alt="photo" width="400"/>
 <p>
-<h2> Overview </h2>
-<ul>
+    
+<h2> Motivation </h2>
   <li>The US-China relationship is changing rapidly. To better understand its dynamics, monitoring and analyzing tweets posted by members of Congress becomes important. </li>
   <li>Before analyzing the tweets, there is a need to distinguish the sentimental posts from the factual posts and provide them with labels of different sentiment levels. </li>
   <li>Currently, there have been two classifiers trained using the text features from the tweets to predict the relevance and sentiment of the tweets.
    <li><strong> The goal of this project is to explore the possibility of employing an active learning pipeline to automate the labeling procedure with these two classification models while enhancing the prediction accuracy over time with new coming tweets.</strong></li>
-</ul>
 
+<h2> Background </h2>
 
-
-<h2> Introduction </h2>
-<h4>Background</h4>
-
-In April 2019, the China Data Lab at UC San Diego initialized the “Congress Tweets” project with the intention of exploring more about the US-China relationship. Through the Twitter API, the lab is able to collect more than 800,000 tweets related to China, posted by members of Congress in recent years. However, not all of them can be used directly to infer about the political relationship between the US and China as some of the tweets contain solely factual information related to China without a direct sentiment. In order to distinguish the relevant sentimental tweets from the factual tweets, we built two classification models using the content of the tweet to predict the relevance and sentiment score of the tweets. By automating the process, we can save resources such as human labor and time as well as ensuring the quality of the data we feed into the analysis process. Prior to deploying the models, the subsequent step is to investigate the method of active learning with incoming data to guarantee the accuracy of the predictions.
+In April 2019, the China Data Lab at UC San Diego initialized the “Congress Tweets” project with the intention of exploring more about the US-China relationship. Through the Twitter API, the lab is able to collect more than 800,000 tweets related to China, posted by members of Congress in recent years. In order to distinguish the relevant sentimental tweets from the factual tweets, we built two classification models using the content of the tweet to predict the relevance and sentiment score of the tweets. By automating the process, we can save resources such as human labor and time as well as ensuring the quality of the data we feed into the analysis process.
 
 <h4>Literature Review & Prior Work</h4>
 
