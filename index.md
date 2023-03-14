@@ -62,6 +62,7 @@ When using the Committee-based Strategies, we included Support Vector Classifier
 
 To find the most effective active learning strategies for our tasks, we implemented both Committee-based Strategies and Posterior probability-based strategies with different settings. The settings we tuned include the number samples we draw from the unlabeled data, data partition ratio, whether or not the data is balanced, whether or not the data is sorted by time, and different models. 
   
+
 <p align="center">
     <img src="img/method.png" alt="photo" width="500"/>
 <p>
@@ -75,6 +76,7 @@ Further analysis revealed that incorporating the predictions of multiple classif
 
 <br>
   
+<center>
 <table class="center">
     <caption align="top">Random Sampling vs. Posterior probability (Relevance)</caption>
     <tr>
@@ -120,9 +122,10 @@ Further analysis revealed that incorporating the predictions of multiple classif
         <td>0.013</td>
     </tr>
 </table>
-
+</center>
+    
 <br>
-
+<center>
 <table class="center">
     <caption style="text-align:center">Random Sampling vs. Committee (Relevance)</caption>
     <tr>
@@ -168,9 +171,10 @@ Further analysis revealed that incorporating the predictions of multiple classif
         <td>0.209</td>
     </tr>
 </table>
+</center>
 
 <br>
-
+<center>
 <table class="center">
     <caption style="text-align:center">Random Sampling vs. Posterior probability (Sentiment)</caption>
     <tr>
@@ -209,9 +213,11 @@ Further analysis revealed that incorporating the predictions of multiple classif
         <td>0.006</td>
     </tr>
 </table>
+</center>
 
 <br>
 
+<center>
 <table class="center">
     <caption style="text-align:center">Random Sampling vs. Committee (Sentiment)</caption>
     <tr>
@@ -250,6 +256,7 @@ Further analysis revealed that incorporating the predictions of multiple classif
         <td>0.991</td>
     </tr>
 </table>
+</center>
 
 <h4>Features that affect the Active Learning Performance</h4>
 
