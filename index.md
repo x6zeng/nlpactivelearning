@@ -1,5 +1,9 @@
 
-<h1> Active learning for NLP in predicting the relevance and sentiment of tweets about politics of China </h1>
+<!-- <h1> Active learning for NLP in predicting the relevance and sentiment of tweets about politics of China </h1> -->
+
+<p align="center">
+    Authors: Yunyi Huang, Xiaotong Zeng
+<p>
 
 <p align="center">
     <img src="img/twitter_us_china.png" alt="photo" width="400"/>
