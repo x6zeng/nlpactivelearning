@@ -302,18 +302,26 @@ The team thanks Dr. Margaret E. Roberts and Yang Yang for their mentorship and a
 <h2> Reference </h2>
 Great Learning Team. (2022, October 25). Random forest Algorithm in Machine learning | Great Learning. Great Learning Blog: Free Resources What Matters to Shape Your Career! https://www.mygreatlearning.com/blog/random-forest-algorithm/
 
+
 Dave, Hardik. “Active Learning Sampling Strategies.” Medium, Medium, 29 May 2020, https://medium.com/@hardik.dave/active-learning-sampling-strategies-f8d8ac7037c8.
+
 
 Ortner, A. (2022, May 31). Top 10 Binary Classification Algorithms [a Beginner’s Guide]. Medium. https://towardsdatascience.com/top-10-binary-classification-algorithms-a-beginners-guide-feeacbd7a3e2
 
+
 B. Settles, Active Learning Literature Survey (2009), Computer Sciences Technical Report 1648, University of Wisconsin–Madison
+
 
 Yang, Y. (2022, May 6). Part I: Who In The U.S. Congress Tweets About China? China Data Lab. https://chinadatalab.ucsd.edu/viz-blog/who-in-the-us-congress-tweets-about-china/
 
+
 Yang, Y. (2022a, April 18). Part II: What Do Members Of Congress Tweet About China? China Data Lab. https://chinadatalab.ucsd.edu/viz-blog/what-do-members-of-congress-tweet-about-china/
+
 
 Yang, Y. (2022c, May 10). Part III: How does Congress Feel about China? China Data Lab. https://chinadatalab.ucsd.edu/viz-blog/how-does-congress-feel-about-china/
 
+
 Yang, Y. (2022d, July 5). Part IV: Does Congress Come Together on China? China Data Lab. https://chinadatalab.ucsd.edu/viz-blog/does-congress-come-together-on-china/
+
 
 Lun Wu, M. (2021, December 16). Twitter Political Compass Machine: A Natural Language Processing Approach and Analysis. Medium. https://towardsdatascience.com/twitter-political-compass-machine-a-nature-language-processing-approach-and-analysis-7e8152033495
