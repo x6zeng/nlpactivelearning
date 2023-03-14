@@ -76,7 +76,7 @@ Further analysis revealed that incorporating the predictions of multiple classif
 
 <br>
   
-<table style="float: left">
+<table align="center">
     <caption align="top">Random Sampling vs. Posterior probability (Relevance)</caption>
     <tr>
         <td>Metric</td>
@@ -124,7 +124,7 @@ Further analysis revealed that incorporating the predictions of multiple classif
 
 <br>
 
-<table style="float: right">
+<table align="center">
     <caption style="text-align:center">Random Sampling vs. Committee (Relevance)</caption>
     <tr>
         <td>Metric</td>
@@ -172,7 +172,7 @@ Further analysis revealed that incorporating the predictions of multiple classif
 
 <br>
 
-<table>
+<table align="center">
     <caption style="text-align:center">Random Sampling vs. Posterior probability (Sentiment)</caption>
     <tr>
         <td>Metric</td>
@@ -213,7 +213,7 @@ Further analysis revealed that incorporating the predictions of multiple classif
 
 <br>
 
-<table>
+<table align="center">
     <caption style="text-align:center">Random Sampling vs. Committee (Sentiment)</caption>
     <tr>
         <td>Metric</td>
@@ -279,7 +279,7 @@ Regarding the impact of sorting data by time on active learning, we plotted accu
 
 <h4>Most accurate vs. Most improved models</h4>
 
-Regarding the task of predicting relevance, the optimal classifier trained with balanced data was found to be a Random Forest Classifier, which yielded a positive class accuracy of approximately 80\%. With respect to sentiment prediction, the most accurate classifier trained with balanced data was determined to be a Ridge Logistic Regression, exhibiting respective accuracies of roughly 75\%, 44\%, and 67\% for the negative, neutral, and positive labels. The corresponding confusion matrix for both classifiers is presented in Figure 9. Additionally, Figure 10 portrays an overall improvement of around 0.16 for accuracy, 0.11 for precision, and 0.16 for recall in the sentiment prediction task. Conversely, the relevance prediction task demonstrated an overall improvement of approximately 0.04 for accuracy, 0.045 for precision, and 0.002 for recall. The relative high improvement in the Sentiment prediction task is due to the high variance in predictions with different settings, as observed from figures 4 and 6. Therefore, while active learning does increase accuracy to a small extent, these improvements may be attributed to randomness and cannot be considered a significant enhancement.
+Regarding the task of predicting relevance, the optimal classifier trained with balanced data was found to be a Random Forest Classifier, which yielded a positive class accuracy of approximately 80%. With respect to sentiment prediction, the most accurate classifier trained with balanced data was determined to be a Ridge Logistic Regression, exhibiting respective accuracies of roughly 75%, 44%, and 67% for the negative, neutral, and positive labels. The corresponding confusion matrix for both classifiers is presented in Figure 9. Additionally, Figure 10 portrays an overall improvement of around 0.16 for accuracy, 0.11 for precision, and 0.16 for recall in the sentiment prediction task. Conversely, the relevance prediction task demonstrated an overall improvement of approximately 0.04 for accuracy, 0.045 for precision, and 0.002 for recall. The relative high improvement in the Sentiment prediction task is due to the high variance in predictions with different settings, as observed from figures 4 and 6. Therefore, while active learning does increase accuracy to a small extent, these improvements may be attributed to randomness and cannot be considered a significant enhancement.
   
 <p align="center">
     <img src="img/accuracy.png" alt="photo" width="500"/>
@@ -291,7 +291,7 @@ Regarding the task of predicting relevance, the optimal classifier trained with 
 
   <li>Through One-Tailed Paired T-Tests comparisons, we discovered that Posterior probability-based sampling strategy successfully identifies the most informative data for continuous model updating, whereas Committee-based does not lead to increased accuracy in the studied case. </li>
   <li>Utilizing unbalanced data produces a more robust and consistent improvement in metric differences. However, this also results in a bias toward the oversized category in the final prediction result. Sorting data by time has a minor impact on accuracy but leads to a higher recall. The partition ratio among the training, unlabeled, and test sets suggests that the optimal model is one with the most training and unlabeled data. </li>
-  <li>Increasing the sampling size yields overall improvements in most metrics. The most accurate models identified in this study are a Random Forest Classifier with an 80\% accuracy for relevance prediction and a Ridge Logistic Regression with accuracies of approximately 75%, 44%, and 67% for negative, neutral, and positive sentiment labels, respectively.</li>
+  <li>Increasing the sampling size yields overall improvements in most metrics. The most accurate models identified in this study are a Random Forest Classifier with an 80% accuracy for relevance prediction and a Ridge Logistic Regression with accuracies of approximately 75%, 44%, and 67% for negative, neutral, and positive sentiment labels, respectively.</li>
    <li>If incorporating Active Learning in a production pipeline in the future, the Posterior probability-based sampling strategy should be prioritized, and balanced datasets with large sampling sizes should be employed.</li>
 
 <h4>Limitation and Future Direction</h4>
