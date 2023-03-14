@@ -3,6 +3,4 @@ show_edit_on_github: false
 github:
   is_project_page: false
 title: Active learning for NLP in predicting the relevance and sentiment of tweets about politics of China
-author:
-- Yunyi Huang
-- Xiaotong Zeng
+description: Yunyi Huang   Xiaotong Zeng
