@@ -1,12 +1,14 @@
 
 # Active learning for NLP in predicting the relevance and sentiment of tweets about politics of China
-<img src="img/twitter_us_china.png" alt="photo" width="200"/>
+<p align="center">
+    <img src="img/twitter_us_china.png" alt="photo" width="500"/>
+<p>
 
 The US-China relationship is changing rapidly. To better understand its dynamics, monitoring and analyzing Twitter data posted by members of Congress becomes important. Before analyzing the tweets, there is a need to distinguish the sentimental posts from the factual posts and provide them with labels of different sentiment levels. Currently, we trained two classifiers that use the text features from the tweets to predict the relevance and sentiment of the tweets. The goal of this project is to explore the possibility of employing an active learning pipeline to automate the labeling procedure with these two classification models while enhancing the prediction accuracy over time with new coming tweets. After investigating the effectiveness of Active Learning, we found that Posterior probability-based sampling strategy is more effective in identifying informative data for model updating. Moreover, our study finds that unbalanced data leads to consistent improvements in metric differences, but this also results in a bias toward the oversized category. Sorting data by time has a minor impact on accuracy but leads to higher recall. The partition ratio among the training, unlabeled, and test sets suggests that the optimal model is the one with the most training and unlabeled data. Additionally, increasing the sampling size leads to improvements in most metrics. The most accurate models is a Random Forest Classifier with an 80\% accuracy for relevance prediction and a Ridge Logistic Regression with accuracies of approximately 75\%, 44\%, and 67\% for negative, neutral, and positive sentiment labels, respectively.
 
 
 ## Introduction
-- Background
+- **Background**
 
 In April 2019, the China Data Lab at UC San Diego initialized the “Congress Tweets” project with the intention of exploring more about the US-China relationship. Through the Twitter API, the lab is able to collect more than 800,000 tweets related to China, posted by members of Congress in recent years. However, not all of them can be used directly to infer about the political relationship between the US and China as some of the tweets contain solely factual information related to China without a direct sentiment. In order to distinguish the relevant sentimental tweets from the factual tweets, we built two classification models using the content of the tweet to predict the relevance and sentiment score of the tweets. By automating the process, we can save resources such as human labor and time as well as ensuring the quality of the data we feed into the analysis process. Prior to deploying the models, the subsequent step is to investigate the method of active learning with incoming data to guarantee the accuracy of the predictions.
 
@@ -17,6 +19,10 @@ According to Active Learning Literature Survey from the University of Wisconsin-
 There are three general learning scenarios for active learning. In Member Query Synthesis, the active learning algorithm generates a new unlabeled instance within the input space and queries the human expert for labeling. In Stream-based Selective Sampling, the unlabeled data is continuously being sent from the data source to the active learner and the active learning needs to decide if it asks the human expert to label the current data based on a query strategy. In Pool-based Sampling, the most common scenario, most informative data samples are selected from the pool of unlabeled data samples based on some sampling strategies or informativeness measure. Then, the human expert will provide the correct label for these unlabeled data samples. Different from stream-based selective sampling, it focuses on more than one data sample at a time.
 
 In the next step, we will determine how to select the subset of data that is most informative to the current model and there are three main types of sampling strategies for active learning based on Hardik Dave's findings. In Committee-based Strategies, we will build different models and use the models’ predictions to determine the most informative data. The data is considered as most informative if there is maximum disagreement in predictions from the models. The disagreement can be measured by entropy or KL-Divergence. In Large margin-based Strategies, the distance to the separating hyperplane is used to measure the model’s confidence or certainty on unlabeled data. In Posterior probability-based strategies, the estimation of class probabilities and the posterior probability distribution are used to determine whether the unlabeled data sample should be queried for label or not. This strategy can be used with any type of model which has the ability to predict output probabilities for class membership. The posterior probability distribution indicates the model’s confidence and certainty to assign the data sample to a particular class. For Posterior probability-based strategies, some common strategies to determine the most informative data samples from the probability distribution include Least Confidence, Best-versus-Second-Best (BvSB), and Entropy.
+  
+<p align="center">
+    <img src="img/entropy.png" alt="photo" width="300"/>
+<p>
 
 - Relevant Data
 
@@ -42,6 +48,10 @@ When using the Committee-based Strategies, we included Support Vector Classifier
 - Active Learning
 
 To find the most effective active learning strategies for our tasks, we implemented both Committee-based Strategies and Posterior probability-based strategies with different settings. The settings we tuned include the number samples we draw from the unlabeled data, data partition ratio, whether or not the data is balanced, whether or not the data is sorted by time, and different models. The first step of active learning is to partition the dataset based on the settings we chose. We will partition the entire dataset into three groups. The first group is called Seed, which is used for training the initial model. The second group is called Unlabeled, which is used for active learning. The third group is called Test, which is used for testing the result of active learning compared with random sampling. The second step of active learning is to train the model using Seed data. We will train the assigned classification model using Seed data and apply cross validation to find the consistent accuracy. The third step of the process is to apply the trained model to the unlabeled dataset and choose a batch of unlabeled instances from the pool based on the selected sampling strategy. For Committee-based Strategies, the most informative data will be selected using the entropy from the different models’ predictions. For Posterior probability-based strategies, the most informative data will be chosen through the entropy calculated from the probability distribution provided by the existing model on the unlabeled dataset. After we find the most informative data from the unlabeled pool, we will add them to the original Seed data and retrain the model. The last step of active learning is to compare the model performance of our active learning process on the test set. In our case, we will compare the model accuracy, f1-score, recall, precision, specificity achieved by employing the active learning techniques with model metrics generated from the random sampling approach to validate the effectiveness of our active learning method in our predictive tasks.
+  
+<p align="center">
+    <img src="img/method.png" alt="photo" width="500"/>
+<p>
 
 ## Findings
 - Posterior probability vs. Committee based sampling strategy
@@ -51,6 +61,16 @@ In this experiment, we utilized several One-tailed Paired T-tests to compare the
 Further analysis revealed that incorporating the predictions of multiple classifiers provided a more robust and less variable estimate of uncertainty, resulting in improved accuracy. Thus, calculating the entropy based on the average of classifiers' predictions did not lead to a significant increase in accuracy. The p-values obtained in Table 1, Table 2, Table 3, and Table 4 indicated that the Posterior probability-based sampling strategy was associated with significantly smaller p-values compared to the Committee-based sampling strategy. Using a confidence level of 0.05, it can be concluded that the active learning process led to significant increases in accuracy, f1-score, recall, and specificity. However, at the same confidence level, the null hypothesis could not be rejected when employing the Committee-based sampling strategy.
 
 Finally, it is worth noting that although the Posterior probability-based sampling strategy resulted in improved predictions, the magnitude of the increase was not substantial, ranging from 0.001 to 0.007.
+  
+<p align="center">
+    <img src="img/table1.png" alt="photo" width="500"/>
+    <img src="img/table2.png" alt="photo" width="500"/>
+<p>
+  
+<p align="center">
+    <img src="img/table1.png" alt="photo" width="500"/>
+    <img src="img/table2.png" alt="photo" width="500"/>
+<p>
 
 - Features that affect the Active Learning Performance
 
@@ -65,6 +85,21 @@ However, while our results were aligned with our hypothesis for relevance predic
 To further investigate the impact of balanced and unbalanced datasets on active learning, we plotted accuracy differences over sampling size in Figures 3 and 5. Our findings showed that unbalanced datasets resulted in a continuously increasing trend in accuracy difference as the sampling size increased, while the variance of the accuracy difference narrowed for both relevance and sentiment prediction tasks. This led us to believe that retaining the original label ratio during the training process could have a more significant effect on active learning performance.
 
 Regarding the impact of sorting data by time on active learning, we plotted accuracy differences over sampling size in Figures 4 and 6. In both cases, we observed that the variances for sorted and unsorted data were significant and did not lead to a continuous improvement in evaluation metrics as the sampling size increased. Our conclusion was that while sorting data by time may result in a marginally lower accuracy, it leads to a higher recall.
+  
+<p align="center">
+    <img src="img/balance_rel.png" alt="photo" width="500"/>
+    <img src="img/balance_sent.png" alt="photo" width="500"/>
+<p>
+  
+<p align="center">
+    <img src="img/time_rel.png" alt="photo" width="500"/>
+    <img src="img/time_sent.png" alt="photo" width="500"/>
+<p>
+  
+<p align="center">
+    <img src="img/model.png" alt="photo" width="500"/>
+    <img src="img/model_1.png" alt="photo" width="500"/>
+<p>
 
 - Most accurate vs. Most improved models
 
@@ -79,6 +114,11 @@ For sentiment prediction, the best model was the Logistic Regression (Ridge) mod
 Figure 9 demonstrates an overall improvement of approximately 0.16 for accuracy, 0.11 for precision, and 0.16 for recall in the sentiment prediction task. In contrast, the relevance prediction task demonstrated an overall improvement of approximately 0.04 for accuracy, 0.045 for precision, and 0.002 for recall.
 
 The relative high improvement in the Sentiment prediction task is due to the high variance in predictions with different settings, as observed from figures 4 and 6. Therefore, while active learning does increase accuracy to a small extent, these improvements may be attributed to randomness and cannot be considered a significant enhancement.
+  
+<p align="center">
+    <img src="img/accuracy.png" alt="photo" width="500"/>
+    <img src="img/cm.png" alt="photo" width="500"/>
+<p>
 
 ## Conclusion
 - Summary
