@@ -15,7 +15,7 @@
 <strong>Active Learning is a repetitive process that utilizes a learning algorithm to search for the most informative data for the existing model, rather than training it on the entire dataset.</strong>
 
 <br>
-<h5>Three general learning scenarios for active learning</h5>
+<h4>Three general learning scenarios for active learning: </h4>
 <br>
 
 <ol>
@@ -25,7 +25,7 @@
 </ol>
 
 <br>
-<h5>Three main strategies to select the subset of data that is most informative to the current model.</h5>
+<h4>Three main strategies to select the subset of data that is most informative to the current model: </h4>
 <br>
 
 <ol>
@@ -290,10 +290,10 @@ Regarding the task of predicting relevance, the optimal classifier trained with 
 <h2> Conclusion </h2>
 <h4>Summary</h4>
 
-  <li>Through One-Tailed Paired T-Tests comparisons, we discovered that Posterior probability-based sampling strategy successfully identifies the most informative data for continuous model updating, whereas Committee-based does not lead to increased accuracy in the studied case. </li>
+  <li>Through One-Tailed Paired T-Tests comparisons, we discovered that <strong>Posterior probability-based sampling strategy successfully identifies the most informative data for continuous model updating</strong>, whereas Committee-based does not lead to increased accuracy in the studied case. </li>
   <li>Utilizing unbalanced data produces a more robust and consistent improvement in metric differences. However, this also results in a bias toward the oversized category in the final prediction result. Sorting data by time has a minor impact on accuracy but leads to a higher recall. The partition ratio among the training, unlabeled, and test sets suggests that the optimal model is one with the most training and unlabeled data. </li>
-  <li>Increasing the sampling size yields overall improvements in most metrics. The most accurate models identified in this study are a Random Forest Classifier with an 80% accuracy for relevance prediction and a Ridge Logistic Regression with accuracies of approximately 75%, 44%, and 67% for negative, neutral, and positive sentiment labels, respectively.</li>
-   <li>If incorporating Active Learning in a production pipeline in the future, the Posterior probability-based sampling strategy should be prioritized, and balanced datasets with large sampling sizes should be employed.</li>
+  <li><strong>Increasing the sampling size yields overall improvements in most metrics.</strong> The most accurate models identified in this study are a Random Forest Classifier with an 80% accuracy for relevance prediction and a Ridge Logistic Regression with accuracies of approximately 75%, 44%, and 67% for negative, neutral, and positive sentiment labels, respectively.</li>
+   <li>If incorporating Active Learning in a production pipeline in the future, the Posterior probability-based sampling strategy should be prioritized, and balanced datasets with large sampling sizes should be employed. </li>
 
 <h4>Limitation and Future Direction</h4>
 
