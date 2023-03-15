@@ -12,9 +12,7 @@
 
 <h2> Background </h2>
 
-<h4>Literature Review & Prior Work</h4>
-
-According to Active Learning Literature Survey from the University of Wisconsin-Madison, in the field of machine learning, <strong>Active Learning is a repetitive process that utilizes a learning algorithm to search for the most informative data for the existing model, rather than training it on the entire dataset.</strong>
+<strong>Active Learning is a repetitive process that utilizes a learning algorithm to search for the most informative data for the existing model, rather than training it on the entire dataset.</strong>
 
 <br>
 <h5>Three general learning scenarios for active learning</h5>
@@ -39,10 +37,6 @@ According to Active Learning Literature Survey from the University of Wisconsin-
 <p align="center">
     <img src="img/entropy.png" alt="photo" width="300"/>
 <p>
-
-<h4>Relevant Data</h4>
-
-The twitter data for this project consists of three parts of information. The first part is the original tweet data which includes the tweet id, author, content, post date, etc. The second part is about the congress politicians who posted the tweets which include their name, birthday, states of representative, political party, etc. The third part is the labels that researchers provide to the tweets subjectively. Our goal is to build two classification models and apply natural language processing to predict the third part of the data which was previously labeled manually. The twitter data consists of 15846 rows and 14544 unique tweets. Since the tweets were sent to different researchers to label and then aggregated together, there are duplicated tweets with different labels for relevance and sentiment score.
 
 <h2> Methods </h2>
 
@@ -72,9 +66,10 @@ To find the most effective active learning strategies for our tasks, we implemen
 
 We utilized several One-tailed Paired T-tests to compare the efficacy of various active learning sampling strategies with the random sampling strategy. Our null hypothesis posited that there would be no discernible difference between the mean values of the evaluation metrics (accuracy, f1-score, precision, recall, and specificity) obtained via random sampling versus those obtained through active learning sampling strategies. Our alternative hypothesis was that the mean value of the evaluation metrics obtained via active learning sampling strategy would be superior to that of the random sampling strategy. The results suggested that the Posterior probability-based sampling strategy successfully identified the most informative data for continuous model updating.
 
-Further analysis revealed that incorporating the predictions of multiple classifiers provided a more robust and less variable estimate of uncertainty, resulting in improved accuracy. Thus, calculating the entropy based on the average of classifiers' predictions did not lead to a significant increase in accuracy. The p-values obtained in tables indicated that the Posterior probability-based sampling strategy was associated with significantly smaller p-values compared to the Committee-based sampling strategy. Using a confidence level of 0.05, it can be concluded that the active learning process led to significant increases in accuracy, f1-score, recall, and specificity.
+Further analysis revealed that incorporating the predictions of multiple classifiers provided a more robust and less variable estimate of uncertainty, resulting in improved accuracy. Thus, calculating the entropy based on the average of classifiers' predictions did not lead to a significant increase in accuracy. The p-values obtained in tables indicated that the Posterior probability-based sampling strategy was associated with significantly smaller p-values compared to the Committee-based sampling strategy. Using a confidence level of 0.05, it can be concluded that the active learning process led to significant increases in accuracy, f1-score, recall, and specificity. <br>
 
 <br>
+
   
 <center>
 <table class="center">
